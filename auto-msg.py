@@ -1,6 +1,9 @@
 import pyautogui as pg
 import time
 
+#Digite o nome do contato ou grupo
+contato = input("Digite o nome do contato ou grupo: ")
+
 # Numero de mensagens
 quantidade = int(input("Digite a quantidade de mensagens que deseja enviar: "))
 
@@ -29,6 +32,19 @@ print("1")
 time.sleep(1)
 print("Iniciando...")
 
+pg.press("win")
+pg.write("Google Chrome")
+pg.press("enter")
+time.sleep(1)
+pg.write("https://web.whatsapp.com/")
+pg.press("enter")
+time.sleep(10)
+pg.press("tab", presses=7)
+pg.write(contato)
+time.sleep(1)
+pg.press("tab", presses=2)
+pg.press("enter")
+time.sleep(1)
 
 # Loop para enviar a mensagem
 for i in range(0, quantidade):
